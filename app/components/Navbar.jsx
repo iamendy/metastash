@@ -1,10 +1,10 @@
-import {Box, Button, Container, Flex, IconButton, Text, useColorMode} from '@chakra-ui/react';
-import {LinkIcon, MoonIcon, SunIcon,HamburgerIcon} from "@chakra-ui/icons";
+import {Box, Container, Flex, IconButton, Text, useColorMode} from '@chakra-ui/react';
+import {MoonIcon, SunIcon,HamburgerIcon} from "@chakra-ui/icons";
 
 
-const Navbar = () => {
+const Navbar = ({handleToggle}) => {
   const { colorMode, toggleColorMode } = useColorMode()
-  //// Here's the signature
+
   // const value = useColorModeValue(lightModeValue, darkModeValue)
   return (
     <Box bg="blackAlpha.100" boxShadow="md">
@@ -23,7 +23,7 @@ const Navbar = () => {
           onClick={toggleColorMode}
         />
 
-        <IconButton
+        <IconButton onClick={handleToggle}
           icon={<HamburgerIcon />}
         />
 
